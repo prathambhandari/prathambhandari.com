@@ -4,7 +4,7 @@ import React from "react";
 function About (){
     return(
         <div className="flex  flex-col justify-around items-center bg-slate-100 h-screen ">
-        <h1 className="text-4xl font-bold text-slate-900 p-10 z-20">About</h1>
+        {/* <h1 className="text-4xl font-bold text-slate-900 p-10 z-20">About</h1> */}
         <div className="bg-slate-200 w-screen justify-center flex flex-col items-center sm:flex-col md:flex-col lg:flex-row 2xl:flex-row p-10  rounded-sm z-20 ">
             <img src="https://pbs.twimg.com/profile_images/1269046768546672640/orvrer_K_400x400.jpg" className="z-20 img-fluid rounded-top object-cover rounded-full w-40 h-40 max-h-40 max-w-40 border-solid border-stone-700 border-2" alt=""></img>
             <div className=" p-10 tracking-wide text-lg ">
