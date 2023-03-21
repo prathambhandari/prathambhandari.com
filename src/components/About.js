@@ -8,7 +8,7 @@ function About (){
         <div className="bg-slate-200 w-screen justify-center flex flex-col items-center sm:flex-col md:flex-col lg:flex-row 2xl:flex-row p-10  rounded-sm z-20 ">
             <img src="https://pbs.twimg.com/profile_images/1269046768546672640/orvrer_K_400x400.jpg" className="z-20 img-fluid rounded-top object-cover rounded-full w-40 h-40 max-h-40 max-w-40 border-solid border-stone-700 border-2" alt=""></img>
             <div className=" p-10 tracking-wide text-lg ">
-                <p className="text-ellipsis w-96">Born in Mangalore, India. Love to code and design Websites,
+                <p className="text-justify">Born in Mangalore, India. Love to code and design Websites,
                    Welll I like to travel,read books,Singing and Guitar,Tbh in singing and guitar im just jack of two trades and master at none.So what else 🤔 ,Well i like the book "Atomic Habits",🫢 I run a channel on Youtube as well all Social Links on the bottom 👇. 
                 </p>
             </div>
