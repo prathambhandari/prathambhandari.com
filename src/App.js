@@ -1,6 +1,6 @@
 import Header from "./components/Header";
-import Socials from "./components/Social";
 import Home from "./components/Home";
+import About from "./components/About";
 
 
 function App() {
@@ -8,6 +8,7 @@ function App() {
     <div className="App ">
       <Header />
       <Home />
+     
     </div>
   );
 }
