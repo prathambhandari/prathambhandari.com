@@ -7,7 +7,7 @@ class Home extends Component{
             title: ''
         }
     }
-    myArray=['Hello','Hola','مرحبًا','ನಮಸ್ಕಾರ','नमस्ते','Bonjour','привет',];
+    myArray=['Hello','Hola','مرحبًا','ನಮಸ್ಕಾರ','नमस्ते','Bonjour','привет','salut'];
 
     componentDidMount(){
         setInterval(()=>{
