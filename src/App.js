@@ -12,7 +12,7 @@ function App() {
       <Home />
       <About/>
       <Courses />
-      <Socials />
+      <Project />
     </div>
   );
 }
