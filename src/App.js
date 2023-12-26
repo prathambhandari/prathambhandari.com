@@ -3,7 +3,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Project from "./components/Project";
 import Socials from "./components/Social";
-
+import Courses from "./components/Courses";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Home />
       <About/>
-      <Project />
+      <Courses />
       <Socials />
     </div>
   );
