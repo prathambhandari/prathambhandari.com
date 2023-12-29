@@ -8,6 +8,7 @@ function Socials(){
             <SocialIcon url="https://www.instagram.com/_prathambhandari/" network="instagram" target="_blank" fgColor="#000" bgColor="transparent" style={{ height: 60, width: 60 }}/>
             <SocialIcon url="https://www.youtube.com/channel/UCeVe4cXVtvN0p4Rcw8sQNBw" network="youtube"  target="_blank" fgColor="#000" bgColor="transparent" style={{ height: 60, width: 60 }}/>
             <SocialIcon url="https://github.com/prathambhandari" network="github" target="_blank"  fgColor="#000" bgColor="transparent" style={{ height: 60, width: 60 }}/>
+            <SocialIcon url="https://www.buymeacoffee.com/prathambhandari" network="buymeacoffee" target="_blank"  fgColor="#000" bgColor="transparent" style={{ height: 60, width: 60 }}/>
         </div>
     )
 }
