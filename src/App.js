@@ -9,8 +9,10 @@ function App() {
   return (
     <div className="App scroll-smooth ">
       <Header />
-      <Courses />
+      <Home />
+      <About />
       <Socials />
+      <Project />
     </div>
   );
 }
