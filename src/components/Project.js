@@ -3,8 +3,8 @@ import './animation.css';
 
 function Project (){
     return(
-        <div className="flex flex-col justify-around h-auto items-center p-20 bg-slate-100  ">
-            <h1 className="text-4xl font-bold underline pb-10">Projects</h1>
+        <div className="flex flex-col justify-around h-auto items-center p-8 bg-slate-100  ">
+            <h1 className="text-4xl font-bold  mb-10">Projects</h1>
             
             <div className="bg-slate-100 w-screen sm:w-screen md:w-screen lg:w-auto 2xl:w-auto p-5  grid grid-cols-1 grid-rows-2 gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 rounded-lg"> 
                 <div className="">
