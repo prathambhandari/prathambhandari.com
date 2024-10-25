@@ -16,9 +16,9 @@ function About (){
         </div>
 
         <div className="flex justify-center items-center bg-slate-200 w-full p-2">
-            <SocialIcon url="https://twitter.com/iampratham24" network="twitter" target="_blank"  fgColor="#000" bgColor="transparent" style={{ height: 60, width: 60 }}/>
-            <SocialIcon url="https://www.instagram.com/_prathambhandari/" network="instagram" target="_blank" fgColor="#000" bgColor="transparent" style={{ height: 60, width: 60 }}/>
-            <SocialIcon url="https://www.youtube.com/channel/UCeVe4cXVtvN0p4Rcw8sQNBw" network="youtube"  target="_blank" fgColor="#000" bgColor="transparent" style={{ height: 60, width: 60 }}/>
+            <SocialIcon url="https://x.com/bhandariprath" network="twitter" target="_blank"  fgColor="#000" bgColor="transparent" style={{ height: 60, width: 60 }}/>
+            <SocialIcon url="https://www.instagram.com/bhandariprath/" network="instagram" target="_blank" fgColor="#000" bgColor="transparent" style={{ height: 60, width: 60 }}/>
+            <SocialIcon url="https://www.youtube.com/@prathambhandari" network="youtube"  target="_blank" fgColor="#000" bgColor="transparent" style={{ height: 60, width: 60 }}/>
             <SocialIcon url="https://github.com/prathambhandari" network="github" target="_blank"  fgColor="#000" bgColor="transparent" style={{ height: 60, width: 60 }}/>
         </div>
         </div>
