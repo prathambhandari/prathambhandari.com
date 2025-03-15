@@ -33,14 +33,14 @@ const PortfolioTimeline = () => {
             className="mb-8 ml-6 relative"
           >
             <motion.div 
-              className="absolute -left-8 bg-slate-700 text-white p-3 rounded-full shadow-lg z-10"
+              className="absolute -left-8 bg-slate-800 text-white p-3 rounded-full shadow-lg z-10"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.4, ease: 'easeOut' }}
             >
               <FaBriefcase size={20} />
             </motion.div>
-            <div className="bg-gray-800 p-4 rounded-lg shadow-md border border-gray-700 relative z-0">
+            <div className="bg-gray-900 p-4 rounded-lg shadow-md border border-gray-700 relative z-0">
               <span className="text-blue-400 font-bold">{item.year}</span>
               <h3 className="text-xl font-semibold">{item.title}</h3>
               <p className="text-gray-300">{item.description}</p>
