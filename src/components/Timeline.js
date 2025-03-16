@@ -5,7 +5,7 @@ const timelineData = [
   {
     year: '2019',
     title: 'Freelancing',
-    description: 'Began offering web development and video editing services.',
+    description: 'I have been offering web development and video editing services.',
   },
   {
     year: '2022',
