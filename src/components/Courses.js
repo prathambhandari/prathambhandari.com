@@ -13,6 +13,18 @@ function Courses() {
                         <h1 className="text-white text-2xl font-semibold">Version Control with GitHub: The Complete Course</h1>
                         <p className="text-slate-200 text-base">A Comprehensive Course on Code Management and Collaboration. Learn how to effectively manage your code and collaborate with others using Git and GitHub.</p>
                     </div>
+                    
+                    {/* Learners and Rating Section */}
+                    <div className="mt-4 text-slate-200 text-sm">
+                        <div className="flex items-center space-x-2">
+                            <span>Total Learners: 7,145</span>
+                        </div>
+                        <div className="flex items-center mt-2">
+                            <span className="text-yellow-500">⭐⭐⭐⭐✨</span>
+                            <span className="ml-2">4.4/5</span>
+                        </div>
+                    </div>
+
                     <div className="mt-6 flex justify-center">
                         <a href="https://www.udemy.com/share/10a5DG/" className="text-decoration-none">
                             <button className="bg-white px-8 py-3 text-black rounded-md hover:bg-lime-500 hover:text-white hover:border hover:border-lime-500 transition-colors duration-200">Start Learning</button>
@@ -26,7 +38,4 @@ function Courses() {
 }
 
 export default Courses;
-
-
-
 

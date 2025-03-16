@@ -53,7 +53,7 @@ function Project() {
                 {projects.map((project, index) => (
                     <div 
                         key={index} 
-                        className="bg-slate-900  border-gray-700 border p-5 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 w-80 h-auto"
+                        className="bg-black  border-gray-700 border p-5 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 w-80 h-auto"
                         onClick={() => setSelectedProject(project)}
                     >
                         <img src={project.img} alt={project.title} className="object-cover h-48 w-full rounded-lg cursor-pointer" />
@@ -70,16 +70,21 @@ function Project() {
             </div>
             {selectedProject && (
                 <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
-                    <div className="bg-slate-900 p-10 rounded-lg relative w-4/5 max-w-3xl">
+                    <div className="bg-black border-gray-700 border p-10 rounded-lg relative w-4/5 max-w-3xl">
                         <button 
-                            className="absolute top-2 right-2 text-white text-2xl" 
+                            className="absolute top-1 right-2 text-white text-3xl px-1 " 
                             onClick={() => setSelectedProject(null)}
                         >
                             &times;
                         </button>
-                        <img src={selectedProject.img} alt={selectedProject.title} className="w-full h-auto rounded-lg" />
-                        <h2 className="text-2xl font-semibold text-white mt-4 text-center">{selectedProject.title}</h2>
-                        <p className="text-gray-400 mt-2 text-center">{selectedProject.description}</p>
+                        <img src={selectedProject.img} alt={selectedProject.title} className="w-full h-auto rounded-lg pb-5" />
+                        <h2 className="text-2xl font-semibold text-white mt-4 text-center pb-3">{selectedProject.title}</h2>
+                        <p className="text-gray-400 mt-2 text-center pb-5">{selectedProject.description}</p>
+                        <div className="flex flex-wrap  gap-2 mt-4 w-full justify-center">
+                            <div className="bg-slate-700 text-white px-3 py-1 rounded-full text-xs font-medium flex">{selectedProject.skill1}</div>
+                            <div className="bg-slate-700 text-white px-3 py-1 rounded-full text-xs font-medium flex">{selectedProject.skill2}</div>
+                            <div className="bg-slate-700 text-white px-3 py-1 rounded-full text-xs font-medium flex">{selectedProject.skill3}</div>
+                        </div>
                     </div>
                 </div>
             )}
