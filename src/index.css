@@ -15,3 +15,49 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* Keyframes for smooth background movement */
+@keyframes bgSmoothMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Glass-like smooth gradient background with blur */
+.bg-gradient {
+  background: linear-gradient(135deg, 
+    rgba(255, 0, 255, 0.4), 
+    rgba(0, 255, 255, 0.4), 
+    rgba(0, 0, 255, 0.4), 
+    rgba(255, 165, 0, 0.4), 
+    rgba(255, 0, 0, 0.4)
+  ); 
+  background-size: 200% 200%; /* Enhanced gradient scaling */
+  animation: bgSmoothMove 5s ease infinite; /* Smooth and slower animation for high quality */
+  opacity: 0.3; /* Low opacity for cleaner, more polished look */
+  backdrop-filter: blur(400px); /* High-quality blur for the glass effect */
+  -webkit-backdrop-filter: blur(30px); /* Safari support */
+  background-attachment: fixed; /* Ensure the background stays fixed while scrolling */
+  filter: brightness(1.1) contrast(1.2); /* Increased brightness and contrast for a clean look */
+}
+
+/* Smooth blurred background with a dark theme for frosted glass */
+.backdrop-blur-lg {
+  backdrop-filter: blur(600px); /* Stronger blur for high-quality frosted effect */
+  -webkit-backdrop-filter: blur(600px); /* Safari support */
+  background-color: rgba(0, 0, 0, 0.3); /* Darkened background for a subtle frosted glass feel */
+  box-shadow: 0px 0px 100px 30px rgba(0, 0, 0, 0.4); /* Soft shadow for a more immersive glass look */
+}
+
+/* Feathered Borders for Elements */
+.feathered-border {
+  border: 20px solid rgba(255, 255, 255, 0.1); /* Soft feathered border for smooth edges */
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Soft border shadow for depth */
+}
