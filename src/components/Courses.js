@@ -5,7 +5,7 @@ function Courses(){
 
     return(
         <div className="flex flex-col justify-around h-auto items-center py-12 bg-black">
-            <h1 className="text-4xl font-semibold  mb-5">Courses</h1>
+            <h1 className="text-4xl font-semibold  mb-5 text-white pb-10">Courses</h1>
          
            <div className="flex flex-wrap justify-around h-auto items-center p-4 bg-black gap-5">
 
