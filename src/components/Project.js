@@ -5,17 +5,26 @@ const projects = [
     {
         img: "https://i.ibb.co/mbwzbDW/work2.png",
         title: "Wood Run",
-        description: "Endless Runner mobile game created in 2019"
+        description: "Endless Runner mobile game created in 2019",
+        skill1: "Unity",
+        skill2: "C#",
+        skill3: "Unity Assets"
     },
     {
         img: "https://i.ibb.co/B3XKVPC/work5.jpg",
         title: "Q-Sales",
-        description: "UI/UX Design created for E-commerce startup"
+        description: "UI/UX Design created for E-commerce startup",
+        skill1: "Adobe XD",
+        skill2: "UI",
+        skill3: "UX"
     },
     {
         img: "https://i.ibb.co/bFQ5mqK/work3.jpg",
         title: "Github Finder",
-        description: "Site where you can Find github accounts via names"
+        description: "Site where you can Find github accounts via names",
+        skill1: "JavaScript",
+        skill2: "React",
+        skill3: "Bootstrap"
     },
     // {
     //     img: "https://i.ibb.co/2Z87w4C/work4.png",
@@ -50,8 +59,14 @@ function Project() {
                         <img src={project.img} alt={project.title} className="object-cover h-48 w-full rounded-lg cursor-pointer" />
                         <h2 className="text-xl font-semibold text-white mt-4">{project.title}</h2>
                         <p className="text-gray-400 mt-2">{project.description}</p>
+                        <div className="flex flex-wrap  gap-2 mt-4 w-full">
+                            <div className="bg-slate-700 text-white px-3 py-1 rounded-full text-xs font-medium flex">{project.skill1}</div>
+                            <div className="bg-slate-700 text-white px-3 py-1 rounded-full text-xs font-medium flex">{project.skill2}</div>
+                            <div className="bg-slate-700 text-white px-3 py-1 rounded-full text-xs font-medium flex">{project.skill3}</div>
+                        </div>
                     </div>
                 ))}
+               
             </div>
             {selectedProject && (
                 <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
