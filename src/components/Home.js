@@ -36,11 +36,11 @@ class Home extends Component {
                     {this.state.title}
                 </motion.h1>
 
-                <h2 className="text-white flex justify-center py-3 pt-1 font-sans z-20 w-96 text-lg sm:text-lg md:text-xl lg:text-2xl 2xl:text-3xl">
+                <h2 className="text-white flex justify-center  font-sans z-20 w-96 text-lg sm:text-lg md:text-xl lg:text-2xl 2xl:text-3xl">
                     I'm a Software Developer
                 </h2>
 
-                <div className="flex flex-col lg:flex-row gap-8">
+                <div className="flex flex-col lg:flex-row gap-6">
                     <PortfolioTimeline />
                 </div>
 
