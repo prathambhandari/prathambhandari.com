@@ -3,7 +3,7 @@ import { SocialIcon } from 'react-social-icons';
 
 function About() {
     return (
-        <div className="flex flex-col justify-center items-center  bg-black py-6 pt-20 px-10 w-full">
+        <div className="flex flex-col justify-center items-center  bg-black py-6 pt-20 px-6 w-full">
             {/* About Card Section with Slate Background and Border */}
             <div className="bg-dark-900 w-full max-w-2xl flex flex-col  items-center sm:flex-col  md:flex-col lg:flex-row p-6 rounded-lg shadow-lg border-2 border-slate-900">
                 <img 
