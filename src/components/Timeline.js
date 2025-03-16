@@ -40,7 +40,7 @@ const PortfolioTimeline = () => {
             >
               <FaBriefcase size={20} />
             </motion.div>
-            <div className="bg-gray-900 p-4 rounded-lg shadow-md border border-gray-700 relative z-0">
+            <div className="bg-slate-900 p-4 rounded-lg shadow-md border border-gray-700 relative z-0">
               <span className="text-blue-400 font-bold">{item.year}</span>
               <h3 className="text-xl font-semibold">{item.title}</h3>
               <p className="text-gray-300">{item.description}</p>

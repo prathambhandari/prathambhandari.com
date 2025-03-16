@@ -44,7 +44,7 @@ function Project() {
                 {projects.map((project, index) => (
                     <div 
                         key={index} 
-                        className="bg-gray-900  border-gray-700 border p-5 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 w-80 h-auto"
+                        className="bg-slate-900  border-gray-700 border p-5 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 w-80 h-auto"
                         onClick={() => setSelectedProject(project)}
                     >
                         <img src={project.img} alt={project.title} className="object-cover h-48 w-full rounded-lg cursor-pointer" />
@@ -55,7 +55,7 @@ function Project() {
             </div>
             {selectedProject && (
                 <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
-                    <div className="bg-gray-900 p-10 rounded-lg relative w-4/5 max-w-3xl">
+                    <div className="bg-slate-900 p-10 rounded-lg relative w-4/5 max-w-3xl">
                         <button 
                             className="absolute top-2 right-2 text-white text-2xl" 
                             onClick={() => setSelectedProject(null)}
