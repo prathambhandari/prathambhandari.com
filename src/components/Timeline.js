@@ -51,5 +51,4 @@ const PortfolioTimeline = () => {
     </div>
   );
 };
-
 export default PortfolioTimeline;
