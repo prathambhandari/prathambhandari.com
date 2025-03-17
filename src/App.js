@@ -2,8 +2,8 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import About from "./components/About";
 import Project from "./components/Project";
-import Socials from "./components/Social";
 import Courses from "./components/Courses";
+import Reels from "./components/Reels";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <About />
       <Courses/>
       <Project />
-
+      {/* <Reels /> */}
     </div>
   );
 }
