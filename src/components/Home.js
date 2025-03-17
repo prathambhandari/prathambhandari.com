@@ -37,7 +37,7 @@ class Home extends Component {
                 </motion.h1>
 
                 <h2 className="text-white flex justify-center  font-sans z-20 w-96 text-lg sm:text-lg md:text-xl lg:text-2xl 2xl:text-3xl">
-                    I'm a Software Developer
+                    I'm a Pratham Bhandari
                 </h2>
 
                 <div className="flex flex-col lg:flex-row gap-6">

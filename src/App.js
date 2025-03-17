@@ -8,7 +8,7 @@ import Courses from "./components/Courses";
 function App() {
   return (
     <div className="App scroll-smooth ">
-      <Header />
+      {/* <Header /> */}
       <Home />
       <About />
       <Courses/>
