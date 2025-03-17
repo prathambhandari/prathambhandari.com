@@ -32,7 +32,7 @@ function About() {
 
             {/* Social Media Icons */}
             <div className="flex justify-center items-center space-x-6 p-6 mt-6">
-                <SocialIcon url="https://x.com/prathbhandari" network="twitter" target="_blank" fgColor="white" bgColor="transparent" className="hover:scale-150 transition-transform duration-300 ease-in-out" />
+                <SocialIcon url="https://x.com/prathbhandari" network="twitter" target="_blank" fgColor="white" bgColor="transparent" className="hover:scale-150  transition-transform duration-300 ease-in-out" />
                 <SocialIcon url="https://www.instagram.com/prathamkrishnabhandari" network="instagram" target="_blank" fgColor="white" bgColor="transparent" className="hover:scale-150 transition-transform duration-300 ease-in-out" />
                 <SocialIcon url="https://www.youtube.com/@prathambhandari" network="youtube" target="_blank" fgColor="white" bgColor="transparent" className="hover:scale-150 transition-transform duration-300 ease-in-out"/>
                 <SocialIcon url="https://github.com/prathambhandari" network="github" target="_blank" fgColor="white" bgColor="transparent" className="hover:scale-150 transition-transform duration-300 ease-in-out"/>
