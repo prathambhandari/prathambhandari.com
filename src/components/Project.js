@@ -27,6 +27,7 @@ const projects = [
         skill2: "React",
         skill3: "Bootstrap"
     },
+    
     // {
     //     img: "https://i.ibb.co/2Z87w4C/work4.png",
     //     title: "Project Four",
