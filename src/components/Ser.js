@@ -13,7 +13,7 @@ function Ser() {
     <div className="flex flex-col items-center bg-black p-10 w-full">
       <h1 className="text-4xl font-semibold text-white mb-6 pb-10">Services</h1>
 
-      <div className="w-full max-w-4xl bg-black border  rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
+      <div className="w-full max-w-4xl bg-black  border-2 border-slate-700  rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
         {/* Image container with padding and border */}
         <div className="p-4  rounded-lg">
           <img 
