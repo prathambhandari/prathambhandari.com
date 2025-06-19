@@ -33,7 +33,7 @@ const About = () => {
           <div className="relative group">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
               <img
-                src="../././assets/1.png"
+                src="https://i.ibb.co/cXpK2KMh/IMG-1438.png"
                 alt="Profile"
                 className="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
               />
