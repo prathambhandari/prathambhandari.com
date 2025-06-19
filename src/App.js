@@ -7,13 +7,11 @@ import Ser from "./components/Ser";
 function App() {
   return (
     <div className="App scroll-smooth ">
-
-      <Home />
+      {/* <Home /> */}
       <About />
-      <Courses/>
+      <Courses />
       <Ser />
       <Project />
-      
     </div>
   );
 }
