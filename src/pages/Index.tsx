@@ -46,7 +46,7 @@ const Index = () => {
       <div className="fixed top-6 right-6 z-50">
         <Button
           onClick={toggleTheme}
-          className="rounded-full shadow-lg backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 border-gray-200 dark:border-gray-700 hover:scale-110 transition-all duration-300"
+          className="rounded-full shadow-lg backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 border-gray-200 dark:border-gray-700 hover:scale-110 transition-all duration-300 mt-14 sm:mt-0"
         >
           {isDark ? (
             <Sun className="h-5 w-5 text-yellow-500" />
