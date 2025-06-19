@@ -42,7 +42,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="py-16  px-4 max-w-6xl mx-auto">
+    <div className="py-16 px-4 max-w-6xl mx-auto">
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl mt-20 font-bold text-gray-900 dark:text-white mb-3">
           Skills & Expertise
@@ -75,6 +75,12 @@ const Skills = () => {
                 >
                   {category.title}
                 </h3>
+
+                {category.featured && (
+                  <span className="px-2 py-1 bg-emerald-500 text-white text-xs rounded-full font-semibold">
+                    Primary
+                  </span>
+                )}
               </div>
 
               <div className="flex flex-wrap gap-2">
