@@ -1,54 +1,12 @@
-# Portfolio – Pratham Bhandari
+# React + Vite
 
-## Project Info
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-This is a personal portfolio website built with modern web technologies. It showcases my skills, projects, and contact information.
+Currently, two official plugins are available:
 
-## How can I edit this code?
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-You can work locally using your preferred IDE.  
-The only requirement is having Node.js & npm installed – [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## Expanding the ESLint configuration
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using your Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm install
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-You can also edit files directly in GitHub or use GitHub Codespaces for a cloud-based development environment.
-
-## What technologies are used for this project?
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-You can deploy this project using any static hosting provider, such as Vercel, Netlify, or GitHub Pages.
-
-### Example: Deploy to Vercel
-
-1. Push your code to a GitHub repository.
-2. Go to [Vercel](https://vercel.com/) and import your repository.
-3. Follow the prompts to deploy.
-
-## Custom Domain
-
-If you are using a platform like Vercel or Netlify, you can connect a custom domain through their dashboard.
-
----
-
-Feel free to reach out if you have any questions or suggestions!
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

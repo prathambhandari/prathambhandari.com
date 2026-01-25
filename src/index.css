@@ -1,262 +1,46 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Portfolio Design System - Professional Developer Theme */
+/* Custom base styles */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
 
-@layer base {
-  :root {
-    /* Core Background & Text */
-    --background: 0 0% 100%;
-    --foreground: 220 15% 15%;
+body {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #e7e5e4;
+  color: #171717;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
 
-    /* Card & Surface Colors */
-    --card: 0 0% 100%;
-    --card-foreground: 220 15% 15%;
-    --card-hover: 0 0% 97%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 15%;
-
-    /* Brand Colors - Monochrome Black/White Theme */
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --primary-hover: 0 0% 15%;
-    --primary-glow: 0 0% 25%;
-
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 9%;
-    --secondary-hover: 0 0% 92%;
-
-    /* Muted & Subtle Colors */
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-
-    /* Accent Colors */
-    --accent: 0 0% 20%;
-    --accent-foreground: 0 0% 98%;
-    --accent-glow: 0 0% 35%;
-
-    /* Status Colors */
-    --destructive: 0 0% 20%;
-    --destructive-foreground: 0 0% 98%;
-
-    --success: 0 0% 25%;
-    --success-foreground: 0 0% 98%;
-
-    /* Border & Input */
-    --border: 0 0% 88%;
-    --input: 0 0% 92%;
-    --ring: 0 0% 9%;
-
-    /* Monochrome Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(0 0% 9%), hsl(0 0% 20%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 98%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(0 0% 97%));
-
-    /* Dock & Navigation */
-    --dock-bg: 0 0% 100% / 0.8;
-    --dock-border: 220 15% 85% / 0.5;
-    --dock-hover: 220 15% 92%;
-    --dock-active: 0 0% 9%;
-
-    /* Shadows & Effects */
-    --shadow-soft: 0 4px 20px hsl(220 15% 35% / 0.1);
-    --shadow-medium: 0 8px 30px hsl(220 15% 35% / 0.15);
-    --shadow-strong: 0 20px 40px hsl(220 15% 35% / 0.2);
-    --shadow-dock: 0 8px 32px hsl(220 15% 35% / 0.12);
-    --shadow-dock: 0 8px 32px hsl(220 15% 35% / 0.12);
-
-    /* Animation Values - Optimized for Speed */
-    --transition-smooth: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-    --transition-fast: all 0.1s ease-out;
-
-    --radius: 0.75rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+/* GPU-accelerated page transition animation */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
   }
-
-  .dark {
-    /* Core Dark Theme */
-    --background: 220 20% 8%;
-    --foreground: 220 15% 95%;
-
-    /* Dark Cards & Surfaces */
-    --card: 220 20% 10%;
-    --card-foreground: 220 15% 95%;
-    --card-hover: 220 20% 12%;
-
-    --popover: 220 20% 10%;
-    --popover-foreground: 220 15% 95%;
-
-    /* Dark Brand Colors */
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --primary-hover: 0 0% 85%;
-
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 85%;
-    --secondary-hover: 0 0% 18%;
-
-    /* Dark Muted */
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
-
-    /* Dark Accent */
-    --accent: 0 0% 80%;
-    --accent-foreground: 0 0% 9%;
-    --accent-glow: 0 0% 90%;
-
-    /* Dark Status */
-    --destructive: 0 0% 80%;
-    --destructive-foreground: 0 0% 9%;
-
-    --success: 0 0% 75%;
-    --success-foreground: 0 0% 9%;
-
-    /* Dark Borders */
-    --border: 0 0% 20%;
-    --input: 0 0% 15%;
-    --ring: 0 0% 98%;
-
-    /* Dark Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(0 0% 98%), hsl(0 0% 80%));
-    --gradient-subtle: linear-gradient(
-      180deg,
-      hsl(220 20% 8%),
-      hsl(220 20% 10%)
-    );
-    --gradient-card: linear-gradient(
-      145deg,
-      hsl(220 20% 10%),
-      hsl(220 20% 12%)
-    );
-
-    /* Dark Dock */
-    --dock-bg: 220 20% 10% / 0.9;
-    --dock-border: 220 15% 30% / 0.5;
-    --dock-hover: 220 20% 18%;
-    --dock-active: 0 0% 98%;
-
-    /* Dark Shadows */
-    --shadow-soft: 0 4px 20px hsl(220 20% 0% / 0.3);
-    --shadow-medium: 0 8px 30px hsl(220 20% 0% / 0.4);
-    --shadow-strong: 0 20px 40px hsl(220 20% 0% / 0.5);
-    --shadow-dock: 0 8px 32px hsl(220 20% 0% / 0.4);
-    --shadow-dock: 0 8px 32px hsl(220 20% 0% / 0.4);
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground transition-colors duration-300;
-  }
+.animate-fade-slide-up {
+  animation: fadeSlideUp 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  will-change: opacity, transform;
 }
 
-@layer components {
-  /* Bottom Ubuntu-style Dock Components */
-  .dock-container {
-    @apply fixed bottom-4 left-1/2 transform -translate-x-1/2 z-40;
-  }
-
-  .dock {
-    @apply flex flex-row items-center gap-1.5 px-3 py-2 rounded-xl backdrop-blur-sm border transition-all duration-150;
-    background: hsl(var(--dock-bg));
-    border-color: hsl(var(--dock-border));
-    box-shadow: 0 4px 16px hsl(220 15% 35% / 0.08);
-  }
-
-  .dock-item {
-    @apply relative p-3 rounded-xl transition-all duration-150 cursor-pointer;
-    transition: var(--transition-fast);
-  }
-
-  .dock-item:hover {
-    @apply scale-105 -translate-y-0.5;
-    background: hsl(var(--dock-hover));
-    box-shadow: 0 2px 8px hsl(220 15% 35% / 0.1);
-  }
-
-  .dock-item.active {
-    background: hsl(var(--dock-active));
-    color: hsl(var(--primary-foreground));
-    box-shadow: 0 2px 8px hsl(220 15% 35% / 0.1);
-  }
-
-  /* Hero Section Styling */
-  .hero-gradient {
-    background: var(--gradient-primary);
-  }
-
-  .text-gradient {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    will-change: transform;
-  }
-
-  /* Card Components */
-  .portfolio-card {
-    @apply p-6 rounded-xl border transition-all duration-150;
-    background: var(--gradient-card);
-    box-shadow: 0 2px 8px hsl(220 15% 35% / 0.05);
-    will-change: transform;
-  }
-
-  .portfolio-card:hover {
-    @apply scale-[1.01];
-    background: hsl(var(--card-hover));
-    box-shadow: 0 4px 16px hsl(220 15% 35% / 0.1);
-  }
-
-  /* Smooth Scrolling */
-  html {
-    scroll-behavior: smooth;
-  }
-
-  /* Custom Scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: hsl(var(--muted));
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: hsl(var(--border));
-    border-radius: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary));
+/* Custom utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }
