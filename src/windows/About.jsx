@@ -16,7 +16,7 @@ const About = ({ windowState, setwindowState, windowName }) => {
       <div className="p-4 text-white px-20 flex flex-col h-full items-center justify-around">
         <img
           className="h-50 w-fit rounded-full outline-4 mt-6"
-          src="../../public/profile.png"
+          src="/profile.png"
           alt=""
         />
         <div className="flex flex-col items-center gap-1">
