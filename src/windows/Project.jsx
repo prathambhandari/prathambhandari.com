@@ -48,7 +48,7 @@ const projects = [
   {
     id: 5,
     title: "Image-Editor",
-    description: "Brief description of this project.",
+    description: "Simple Image editor website.with various features.",
     image:
       "https://i.ibb.co/S4zMFgxc/07-F65964-5-C48-4-B17-ABB6-9-EBBB8511-AA2.png",
     tech: ["HTML", "CSS", "JavaScript"],
@@ -94,14 +94,18 @@ const Project = ({ windowState, setwindowState, windowName }) => {
                   })}
                 </div>
                 <div className="flex gap-5  text-2xl">
-                  <div className="flex items-center gap-1 hover:scale-110 transition-transform duration-150 ease-in-out font-semibold text-green-300">
-                    <a href={project.liveUrl}>Live </a>
-                    <RiArrowRightUpLine />
-                  </div>
-                  <div className="flex items-center gap-1 hover:scale-110 transition-transform duration-150 ease-in-out font-semibold ">
-                    <a href={project.githubUrl}> Github</a>{" "}
-                    <RiArrowRightUpLine />
-                  </div>
+                  {project.liveUrl && (
+                    <div className="flex items-center gap-1 hover:scale-110 transition-transform duration-150 ease-in-out font-semibold text-green-300">
+                      <a href={project.liveUrl}>Live </a>
+                      <RiArrowRightUpLine />
+                    </div>
+                  )}
+                  {project.githubUrl && (
+                    <div className="flex items-center gap-1 hover:scale-110 transition-transform duration-150 ease-in-out font-semibold ">
+                      <a href={project.githubUrl}> Github</a>{" "}
+                      <RiArrowRightUpLine />
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
