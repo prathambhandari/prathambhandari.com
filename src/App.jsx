@@ -23,9 +23,9 @@ const App = () => {
           backgroundPosition: "center",
         }}
       >
-        <h1 className="absolute font-bold  text-green-400 top-1/2 left-1/2 transform -translate-x-1/4 -translate-y-6/2 text-6xl whitespace-nowrap">
+        {/* <h1 className="absolute font-bold  text-green-400 top-1/2 left-1/2 transform -translate-x-1/4 -translate-y-6/2 text-6xl whitespace-nowrap">
           Pratham Bhandari
-        </h1>
+        </h1> */}
         <Nav />
         <Dock windowState={windowState} setwindowState={setwindowState} />
         {windowState.Resume && (
