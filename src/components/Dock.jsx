@@ -28,7 +28,7 @@ const Dock = ({ windowState, setwindowState }) => {
         onClick={() => {
           setwindowState((state) => ({ ...state, Projects: true }));
         }}
-        className="mb-4 flex flex-col justify-center items-center text-center transform transition-transform duration-200 ease-in-out hover:scale-150 active:scale-125 focus:outline-none"
+        className="mb-4 flex flex-col justify-center items-center text-center transform transition-transform duration-200 ease-in-out hover:scale-125 active:scale-110 focus:outline-none"
         aria-label="Projects"
       >
         <RiBookFill className="text-amber-600 rounded-xl" size={50} />
@@ -38,7 +38,7 @@ const Dock = ({ windowState, setwindowState }) => {
         onClick={() => {
           setwindowState((state) => ({ ...state, Skills: true }));
         }}
-        className="mb-4 flex flex-col justify-center items-center text-center transform transition-transform duration-200 ease-in-out hover:scale-150 active:scale-125 focus:outline-none"
+        className="mb-4 flex flex-col justify-center items-center text-center transform transition-transform duration-200 ease-in-out hover:scale-125 active:scale-110 focus:outline-none"
         aria-label="Skills"
       >
         <RiTerminalBoxLine className="text-amber-50 rounded-xl" size={50} />
@@ -49,7 +49,7 @@ const Dock = ({ windowState, setwindowState }) => {
         onClick={() => {
           setwindowState((state) => ({ ...state, About: true }));
         }}
-        className="mb-4 flex flex-col justify-center items-center text-center transform transition-transform duration-200 ease-in-out hover:scale-150 active:scale-125 focus:outline-none"
+        className="mb-4 flex flex-col justify-center items-center text-center transform transition-transform duration-200 ease-in-out hover:scale-125 active:scale-110 focus:outline-none"
         aria-label="About Me"
       >
         <RiFileUserFill className="text-green-600 rounded-xl" size={50} />
@@ -59,7 +59,7 @@ const Dock = ({ windowState, setwindowState }) => {
         onClick={() => {
           window.open("https://github.com/prathambhandari", "_blank");
         }}
-        className="mb-4 flex flex-col justify-center items-center text-center transform transition-transform duration-200 ease-in-out hover:scale-150 active:scale-125 focus:outline-none"
+        className="mb-4 flex flex-col justify-center items-center text-center transform transition-transform duration-200 ease-in-out hover:scale-125 active:scale-110 focus:outline-none"
         aria-label="About Me"
       >
         <RiGithubFill
@@ -72,7 +72,7 @@ const Dock = ({ windowState, setwindowState }) => {
         onClick={() => {
           window.open("https://www.linkedin.com/in/prathambhandari/", "_blank");
         }}
-        className="mb-4 flex flex-col justify-center items-center text-center transform transition-transform duration-200 ease-in-out hover:scale-150 active:scale-125 focus:outline-none"
+        className="mb-4 flex flex-col justify-center items-center text-center transform transition-transform duration-200 ease-in-out hover:scale-125 active:scale-110 focus:outline-none"
         aria-label="About Me"
       >
         <RiLinkedinBoxFill
@@ -85,7 +85,7 @@ const Dock = ({ windowState, setwindowState }) => {
         onClick={() => {
           window.open("https://x.com/zewstaz", "_blank");
         }}
-        className="mb-4 flex flex-col justify-center items-center text-center transform transition-transform duration-200 ease-in-out hover:scale-150 active:scale-125 focus:outline-none"
+        className="mb-4 flex flex-col justify-center items-center text-center transform transition-transform duration-200 ease-in-out hover:scale-125 active:scale-110 focus:outline-none"
         aria-label="About Me"
       >
         <RiTwitterXLine className="text-white-800   rounded-xl" size={50} />
@@ -95,7 +95,7 @@ const Dock = ({ windowState, setwindowState }) => {
         onClick={() => {
           window.open("https://www.instagram.com/bhandariprath/", "_blank");
         }}
-        className="mb-4 flex flex-col justify-center items-center text-center transform transition-transform duration-200 ease-in-out hover:scale-150 active:scale-125 focus:outline-none"
+        className="mb-4 flex flex-col justify-center items-center text-center transform transition-transform duration-200 ease-in-out hover:scale-125 active:scale-110 focus:outline-none"
         aria-label="About Me"
       >
         <RiInstagramLine className="text-pink-800   rounded-xl" size={50} />
@@ -105,7 +105,7 @@ const Dock = ({ windowState, setwindowState }) => {
         onClick={() => {
           window.open("https://www.youtube.com/@prathambhandari", "_blank");
         }}
-        className="mb-4 flex flex-col justify-center items-center text-center transform transition-transform duration-200 ease-in-out hover:scale-150 active:scale-125 focus:outline-none"
+        className="mb-4 flex flex-col justify-center items-center text-center transform transition-transform duration-200 ease-in-out hover:scale-125 active:scale-110 focus:outline-none"
         aria-label="About Me"
       >
         <RiYoutubeFill className="text-red-800   rounded-xl" size={50} />
