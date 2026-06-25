@@ -3,6 +3,7 @@ const profile = {
   shortName: "P. BHANDARI",
   avatarUrl: "https://avatars.githubusercontent.com/u/62651866?v=4&s=256",
   location: "Mangalore, India",
+  email: "contact@prathambhandari.com",
   education: "BCA · Manipal University Jaipur · 2025–present",
   intro:
     "I am Pratham Bhandari , a full-stack web developer based in Mangalore, India. I build websites and web apps, freelance for startups, and care about products that feel good to use.",
@@ -360,12 +361,16 @@ function App() {
         <footer className="contact" id="contact">
           <a
             className="contact__headline"
-            href={connectLinks[1]?.href || connectLinks[0].href}
+            href="https://calendar.app.google/TeoL36YWahFhGFGs5"
             target="_blank"
             rel="noreferrer"
           >
             Start a project
             <span className="contact__arrow">↑</span>
+          </a>
+
+          <a className="contact__email" href={`mailto:${profile.email}`}>
+            {profile.email}
           </a>
 
           <div className="contact__grid">

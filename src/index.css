@@ -685,12 +685,28 @@ main {
   transform: translate(0.06em, -0.06em) rotate(45deg);
 }
 
+.contact__email {
+  display: inline-block;
+  margin-top: clamp(20px, 4vh, 40px);
+  font-family: var(--mono);
+  font-size: clamp(15px, 2.4vw, 26px);
+  letter-spacing: 0.02em;
+  color: var(--acid);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+  word-break: break-word;
+}
+
+.contact__email:hover {
+  border-color: var(--acid);
+}
+
 .contact__grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 32px;
-  margin-top: clamp(36px, 8vh, 80px);
+  margin-top: clamp(28px, 6vh, 56px);
   border-top: 1px solid var(--line);
   padding-top: 28px;
 }
