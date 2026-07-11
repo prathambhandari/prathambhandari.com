@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const profile = {
   name: "Pratham Bhandari",
   avatarUrl: "/portrait.webp",
@@ -17,12 +19,12 @@ const experience = [
   {
     role: "Junior Support Engineer",
     org: "UnifyCX",
-    period: "Mar 2025 — Jul 2025",
+    period: "Mar 2025 to Jul 2025",
   },
   {
     role: "Technical Assistant & Program Manager",
     org: "MicroDegree · Mangalore",
-    period: "Apr 2022 — Sep 2023",
+    period: "Apr 2022 to Sep 2023",
   },
 ];
 
@@ -43,6 +45,25 @@ const products = [
   },
 ];
 
+const courses = [
+  {
+    title: "Git and GitHub: Collaboration and Version Control Unveiled",
+    platform: "Udemy",
+    href: "https://www.udemy.com/course/git-and-github-collaboration-and-version-control-unveiled/",
+    description:
+      "A comprehensive Udemy course I teach on Git and GitHub, covering version control fundamentals, branching, merging, rebasing, and real-world collaboration workflows.",
+    rating: 4.5,
+    ratingCount: 60,
+    students: 7145,
+    preview: "/previews/udemy-git-github.png",
+    previewWidth: 480,
+    previewHeight: 270,
+    previewAlt: "Git and GitHub Udemy course",
+  },
+];
+
+const formatCount = (n) => n.toLocaleString("en-US");
+
 const certificates = [
   {
     id: "complete-web-developer-udemy",
@@ -55,7 +76,7 @@ const certificates = [
   {
     id: "diploma-basic-programming-keonics",
     title: "Diploma in Basic Programming",
-    issuer: "Keonics — India",
+    issuer: "Keonics, India",
     issued: "Apr 2020",
     skills: "C (Programming Language)",
   },
@@ -143,7 +164,24 @@ const projects = [
 
 const pad = (n) => String(n).padStart(2, "0");
 
+const PROJECTS_PER_PAGE = 2;
+
 function App() {
+  const [projectPage, setProjectPage] = useState(0);
+  const projectPageCount = Math.ceil(projects.length / PROJECTS_PER_PAGE);
+  const visibleProjects = projects.slice(
+    projectPage * PROJECTS_PER_PAGE,
+    projectPage * PROJECTS_PER_PAGE + PROJECTS_PER_PAGE,
+  );
+
+  const showPrevProjects = () => {
+    setProjectPage((page) => Math.max(0, page - 1));
+  };
+
+  const showNextProjects = () => {
+    setProjectPage((page) => Math.min(projectPageCount - 1, page + 1));
+  };
+
   return (
     <div className="shell">
       <div className="grid-lines" aria-hidden="true">
@@ -212,24 +250,50 @@ function App() {
         <section className="block" id="cases">
           <header className="block__head">
             <h2 className="block__title">Projects</h2>
-            <span className="block__count">[ {pad(projects.length)} ]</span>
+            <div className="block__actions">
+              <span className="block__count">
+                [ {pad(projects.length)} · {pad(projectPage + 1)} /{" "}
+                {pad(projectPageCount)} ]
+              </span>
+              <div className="case-nav">
+                <button
+                  type="button"
+                  className="case-nav__btn"
+                  onClick={showPrevProjects}
+                  disabled={projectPage === 0}
+                  aria-label="Previous projects"
+                >
+                  ←
+                </button>
+                <button
+                  type="button"
+                  className="case-nav__btn"
+                  onClick={showNextProjects}
+                  disabled={projectPage >= projectPageCount - 1}
+                  aria-label="Next projects"
+                >
+                  →
+                </button>
+              </div>
+            </div>
           </header>
 
           <ul className="cases">
-            {projects.map((project, i) => {
+            {visibleProjects.map((project, i) => {
+              const projectIndex = projectPage * PROJECTS_PER_PAGE + i;
               const CaseTag = project.liveUrl ? "a" : "div";
               const linkProps = project.liveUrl
                 ? {
                     href: project.liveUrl,
                     target: "_blank",
                     rel: "noreferrer",
-                    "aria-label": `${project.title} — open live site`,
+                    "aria-label": `${project.title}, open live site`,
                   }
                 : {};
               return (
               <li key={project.title} className="case">
                 <CaseTag className="case__main" {...linkProps}>
-                  <span className="case__index">{pad(i + 1)}</span>
+                  <span className="case__index">{pad(projectIndex + 1)}</span>
                   <span className="case__title">{project.title}</span>
                   <span className="case__thumb">
                     <img
@@ -273,6 +337,72 @@ function App() {
           </ul>
         </section>
 
+        <section className="block" id="courses">
+          <header className="block__head">
+            <h2 className="block__title">Course</h2>
+            <span className="block__count">[ {pad(courses.length)} ]</span>
+          </header>
+
+          <ul className="courses">
+            {courses.map((course, i) => (
+              <li key={course.title} className="course">
+                <a
+                  className="course__main"
+                  href={course.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`${course.title}, open on ${course.platform}`}
+                >
+                  <span className="course__index">{pad(i + 1)}</span>
+                  <div className="course__body">
+                    <span className="course__platform">{course.platform}</span>
+                    <span className="course__title">{course.title}</span>
+                    <div className="course__stats">
+                      <span className="course__stat course__stat--rating">
+                        <span className="course__stat-value">{course.rating} ★</span>
+                        <span className="course__stat-label">Rating</span>
+                      </span>
+                      <span className="course__stat course__stat--students">
+                        <span className="course__stat-value">
+                          {formatCount(course.students)}
+                        </span>
+                        <span className="course__stat-label">Students</span>
+                      </span>
+                      <span className="course__stat course__stat--reviews">
+                        <span className="course__stat-value">
+                          {formatCount(course.ratingCount)}
+                        </span>
+                        <span className="course__stat-label">Reviews</span>
+                      </span>
+                    </div>
+                  </div>
+                  <span className="course__thumb">
+                    <img
+                      src={course.preview}
+                      alt={course.previewAlt}
+                      width={course.previewWidth}
+                      height={course.previewHeight}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </span>
+                </a>
+                <div className="course__meta">
+                  <p className="course__desc">{course.description}</p>
+                  <a
+                    href={course.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-link"
+                  >
+                    View course ↗
+                  </a>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         <section className="block" id="experience">
           <header className="block__head">
             <h2 className="block__title">
@@ -307,7 +437,7 @@ function App() {
                     {c.issuer} · {c.issued}
                   </p>
                   {c.credentialId ? (
-                    <p className="cert__id">ID — {c.credentialId}</p>
+                    <p className="cert__id">ID: {c.credentialId}</p>
                   ) : null}
                   {c.skills ? <p className="cert__skills">{c.skills}</p> : null}
                   {c.credentialUrl ? (
