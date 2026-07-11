@@ -1,13 +1,11 @@
 const profile = {
   name: "Pratham Bhandari",
-  shortName: "P. BHANDARI",
-  avatarUrl: "https://avatars.githubusercontent.com/u/62651866?v=4&s=256",
+  avatarUrl: "/portrait.webp",
   location: "Mangalore, India",
   email: "contact@prathambhandari.com",
   education: "BCA · Manipal University Jaipur · 2025–present",
   intro:
     "I am Pratham Bhandari , a full-stack web developer based in Mangalore, India. I build websites and web apps, freelance for startups, and care about products that feel good to use.",
-  bio: "Within freelance work and full-time roles I have been mastering the craft of full-stack development, UI implementation, and shipping real products. Outside of code you'll find me exploring new places, listening to music, or on the field playing football.",
 };
 
 const experience = [
@@ -72,17 +70,23 @@ const certificates = [
 ];
 
 const techStack = [
-  "JavaScript",
-  "React",
-  "Tailwind CSS",
-  "HTML / CSS",
-  "Git",
-  "Node.js",
-  "Express",
-  "MongoDB",
-  "AWS",
-  "Supabase",
-  "Vercel",
+  { name: "JavaScript", slug: "javascript" },
+  { name: "TypeScript", slug: "typescript" },
+  { name: "React", slug: "react" },
+  { name: "Next.js", slug: "nextdotjs" },
+  { name: "Node.js", slug: "nodedotjs" },
+  { name: "Express", slug: "express" },
+  { name: "Tailwind CSS", slug: "tailwindcss" },
+  { name: "HTML / CSS", slug: "html5" },
+  { name: "Git", slug: "git" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "SQL", slug: "postgresql" },
+  { name: "Docker", slug: "docker" },
+  { name: "Kubernetes", slug: "kubernetes" },
+  { name: "Linux", slug: "linux" },
+  { name: "AWS", slug: "amazonwebservices" },
+  { name: "Supabase", slug: "supabase" },
+  { name: "Vercel", slug: "vercel" },
 ];
 
 const projects = [
@@ -147,14 +151,11 @@ function App() {
         <span />
       </div>
 
+      <div className="page">
       <header className="topbar">
         <a className="topbar__logo" href="#top">
-          {profile.shortName}
+          {profile.name}
         </a>
-        <span className="topbar__status">
-          <span className="dot" aria-hidden="true" />
-          Available for work
-        </span>
         <nav className="topbar__nav" aria-label="Primary">
           <a href="#cases">Work</a>
           <a href="#contact">Contact</a>
@@ -163,35 +164,21 @@ function App() {
 
       <main id="top">
         <section className="hero">
-          <p className="hero__intro">{profile.intro}</p>
+          <div className="hero__content">
+            <p className="hero__intro">{profile.intro}</p>
 
-          <div className="hero__portrait">
-            <img
-              src={profile.avatarUrl}
-              alt={profile.name}
-              width={160}
-              height={160}
-              decoding="async"
-              fetchPriority="high"
-            />
-            <span className="hero__portrait-dot" aria-hidden="true" />
+            <div className="hero__portrait">
+              <img
+                src={profile.avatarUrl}
+                alt={profile.name}
+                width={600}
+                height={800}
+                decoding="async"
+                fetchPriority="high"
+              />
+              <span className="hero__portrait-dot" aria-hidden="true" />
+            </div>
           </div>
-
-          <p className="hero__bio">{profile.bio}</p>
-
-          <h1 className="hero__headline">
-            <span>Want to work</span>
-            <span>
-              with me
-              <a
-                className="hero__arrow"
-                href="#contact"
-                aria-label="Jump to contact"
-              >
-                ↑
-              </a>
-            </span>
-          </h1>
 
           <div className="hero__footer">
             <span className="tag tag--accent">Full-Stack Web Developer</span>
@@ -200,11 +187,29 @@ function App() {
           </div>
         </section>
 
+        <section className="block skills" id="skills" aria-label="Skills">
+          <span className="skills__label">Skills</span>
+          <ul className="skills-grid">
+            {techStack.map((tech) => (
+              <li key={tech.name} className="skills-grid__item">
+                <img
+                  src={`https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/${tech.slug}.svg`}
+                  alt=""
+                  className="skills-grid__icon"
+                  width={48}
+                  height={48}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span className="skills-grid__name">{tech.name}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         <section className="block" id="cases">
           <header className="block__head">
-            <h2 className="block__title">
-              Selected <em>Cases</em>
-            </h2>
+            <h2 className="block__title">Projects</h2>
             <span className="block__count">[ {pad(projects.length)} ]</span>
           </header>
 
@@ -343,21 +348,6 @@ function App() {
           </div>
         </section>
 
-        <section className="marquee-wrap" aria-label="Tech stack">
-          <div className="marquee">
-            {[0, 1].map((dup) => (
-              <ul className="marquee__track" key={dup} aria-hidden={dup === 1}>
-                {techStack.map((tech) => (
-                  <li key={`${dup}-${tech}`}>
-                    {tech}
-                    <span className="marquee__sep">/</span>
-                  </li>
-                ))}
-              </ul>
-            ))}
-          </div>
-        </section>
-
         <footer className="contact" id="contact">
           <a
             className="contact__headline"
@@ -399,6 +389,7 @@ function App() {
           </div>
         </footer>
       </main>
+      </div>
     </div>
   );
 }
