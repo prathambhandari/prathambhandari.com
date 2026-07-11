@@ -83,6 +83,9 @@ const techStack = [
   { name: "SQL", slug: "postgresql" },
   { name: "Docker", slug: "docker" },
   { name: "Kubernetes", slug: "kubernetes" },
+  { name: "Jenkins", slug: "jenkins" },
+  { name: "GitLab", slug: "gitlab" },
+  { name: "Ansible", slug: "ansible" },
   { name: "Linux", slug: "linux" },
   { name: "AWS", slug: "amazonwebservices" },
   { name: "Supabase", slug: "supabase" },
@@ -175,9 +178,8 @@ function App() {
                 height={800}
                 decoding="async"
                 fetchPriority="high"
-              />
-              <span className="hero__portrait-dot" aria-hidden="true" />
-            </div>
+            />
+          </div>
           </div>
 
           <div className="hero__footer">
