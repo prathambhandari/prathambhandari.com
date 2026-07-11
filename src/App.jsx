@@ -7,7 +7,7 @@ const profile = {
   email: "contact@prathambhandari.com",
   education: "BCA · Manipal University Jaipur · 2025–present",
   intro:
-    "I am Pratham Bhandari , a full-stack web developer based in Mangalore, India. I build websites and web apps, freelance for startups, and care about products that feel good to use.",
+    "I'm Pratham Bhandari, a full-stack web developer based in Mangalore, India. I build websites and web apps using modern technologies like React, Node, and MongoDB, and teach Git & GitHub to 7,000+ students on Udemy.",
 };
 
 const experience = [
