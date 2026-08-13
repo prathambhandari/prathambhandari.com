@@ -871,35 +871,9 @@ main {
   width: 100%;
 }
 
-.contact__headline {
-  display: block;
-  font-family: var(--sans);
-  font-weight: 500;
-  font-size: clamp(2rem, 8vw, 5rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  text-transform: none;
-  color: var(--fg-bright);
-  transition: color 0.25s ease;
-}
-
-.contact__headline:hover {
-  color: var(--accent);
-}
-
-.contact__arrow {
-  display: inline-block;
-  margin-left: 0.1em;
-  transition: transform 0.25s ease;
-}
-
-.contact__headline:hover .contact__arrow {
-  transform: translate(0.06em, -0.06em) rotate(45deg);
-}
-
 .contact__email {
   display: inline-block;
-  margin-top: clamp(20px, 4vh, 40px);
+  margin-top: 0;
   font-family: var(--mono);
   font-size: clamp(15px, 2.4vw, 22px);
   letter-spacing: 0.02em;

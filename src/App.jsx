@@ -7,7 +7,7 @@ const profile = {
   email: "contact@prathambhandari.com",
   education: "BCA · Manipal University Jaipur · 2025–present",
   intro:
-    "I'm Pratham Bhandari, a full-stack web developer based in Mangalore, India. I build websites and web apps using modern technologies like React, Node, and MongoDB, and have taught Git & GitHub to 7,000+ students on Udemy.",
+    "I'm Pratham Bhandari, a full-stack web developer based in Mangalore, India. I build websites and web apps with React, Node, and MongoDB, and I've also built GenAI apps like a Chat with PDF project powered by RAG. I've taught Git & GitHub to 7,000+ students on Udemy.",
 };
 
 const experience = [
@@ -38,6 +38,11 @@ const connectLinks = [
 
 /** Products: { label, href, description? } — optional blurb below the link chip. */
 const products = [
+  {
+    label: "VistaWatch",
+    href: "https://vistawatch.app/",
+    description: "A video platform to watch and share content.",
+  },
   {
     label: "My Simple Resume",
     href: "https://www.mysimpleresume.com/",
@@ -101,12 +106,8 @@ const techStack = [
   { name: "HTML / CSS", slug: "html5" },
   { name: "Git", slug: "git" },
   { name: "MongoDB", slug: "mongodb" },
-  { name: "SQL", slug: "postgresql" },
+  { name: "Qdrant", slug: "qdrant" },
   { name: "Docker", slug: "docker" },
-  { name: "Kubernetes", slug: "kubernetes" },
-  { name: "Jenkins", slug: "jenkins" },
-  { name: "GitLab", slug: "gitlab" },
-  { name: "Ansible", slug: "ansible" },
   { name: "Linux", slug: "linux" },
   { name: "AWS", slug: "amazonwebservices" },
   { name: "Supabase", slug: "supabase" },
@@ -114,6 +115,15 @@ const techStack = [
 ];
 
 const projects = [
+  {
+    title: "RAG Application - Chat with PDF",
+    description:
+      "A GenAI RAG app that lets you chat with any PDF using Qdrant as a vector database for document retrieval.",
+    preview: "/previews/chat-with-pdf.webp",
+    previewWidth: 1024,
+    previewHeight: 598,
+    liveUrl: "https://chat-with-pdf-k1yg.onrender.com/",
+  },
   {
     title: "Victor Grossman Memorial",
     description:
@@ -233,7 +243,7 @@ function App() {
             {techStack.map((tech) => (
               <li key={tech.name} className="skills-grid__item">
                 <img
-                  src={`https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/${tech.slug}.svg`}
+                  src={`https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${tech.slug}.svg`}
                   alt=""
                   className="skills-grid__icon"
                   width={48}
@@ -481,16 +491,6 @@ function App() {
         </section>
 
         <footer className="contact" id="contact">
-          <a
-            className="contact__headline"
-            href="https://calendar.app.google/TeoL36YWahFhGFGs5"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Start a project
-            <span className="contact__arrow">↑</span>
-          </a>
-
           <a className="contact__email" href={`mailto:${profile.email}`}>
             {profile.email}
           </a>
