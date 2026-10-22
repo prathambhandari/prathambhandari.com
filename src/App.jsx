@@ -4,17 +4,21 @@ const profile = {
   name: "Pratham Bhandari",
   avatarUrl: "/portrait.webp",
   location: "Mangalore, India",
-  email: "contact@prathambhandari.com",
   education: "BCA · Manipal University Jaipur · 2025–present",
   intro:
-    "I'm Pratham Bhandari, a full-stack web developer based in Mangalore, India. I build websites and web apps with React, Node, and MongoDB, and I've also built GenAI apps like a Chat with PDF project powered by RAG. I've taught Git & GitHub to 7,000+ students on Udemy.",
+    "I'm Pratham Bhandari, a full-stack web developer based in Mangalore, India. I build websites and web apps with React, Node, and MongoDB, and I've also built GenAI Apps. I've taught Git & GitHub to 7,000+ students on Udemy.",
 };
 
 const experience = [
   {
+    role: "Fullstack WebDev Trainer",
+    org: "WinShriTech",
+    period: "Aug 2026 to Present",
+  },
+  {
     role: "Freelance Web Developer",
     org: "Self-employed",
-    period: "Present",
+    period: "Jan 2019 to Present",
   },
   {
     role: "Junior Support Engineer",
@@ -36,20 +40,6 @@ const connectLinks = [
   },
 ];
 
-/** Products: { label, href, description? } — optional blurb below the link chip. */
-const products = [
-  {
-    label: "VistaWatch",
-    href: "https://vistawatch.app/",
-    description: "A video platform to watch and share content.",
-  },
-  {
-    label: "My Simple Resume",
-    href: "https://www.mysimpleresume.com/",
-    description: "A website where you can create a CV very quickly.",
-  },
-];
-
 const courses = [
   {
     title: "Git and GitHub: Collaboration and Version Control Unveiled",
@@ -58,7 +48,7 @@ const courses = [
     description:
       "A comprehensive Udemy course I teach on Git and GitHub, covering version control fundamentals, branching, merging, rebasing, and real-world collaboration workflows.",
     rating: 4.5,
-    ratingCount: 60,
+    ratingCount: 61,
     students: 7145,
     preview: "/previews/udemy-git-github.png",
     previewWidth: 480,
@@ -67,7 +57,48 @@ const courses = [
   },
 ];
 
+const reviews = [
+  {
+    name: "Sudhakar",
+    rating: 5,
+    date: "2 years ago",
+    href: `${courses[0].href}#reviews`,
+    text: "Learning new things is enjoyable and easy to understand with his clear and uncomplicated teaching method.",
+  },
+  {
+    name: "Gemechu",
+    rating: 5,
+    date: "2 years ago",
+    href: `${courses[0].href}#reviews`,
+    text: "For me this course is nice and I understand 100% because I have some basic knowledge. Now it is clear for me.",
+  },
+  {
+    name: "Alejandro Serrano",
+    rating: 5,
+    date: "2 years ago",
+    href: `${courses[0].href}#reviews`,
+    text: "It is a good course for someone who wants to start with Git and GitHub, and if English is not your native language, it can help you practice English too.",
+  },
+];
+
 const formatCount = (n) => n.toLocaleString("en-US");
+
+const trainingBatches = [
+  {
+    id: "batch-1",
+    label: "CSE",
+    image: "/previews/CSE.png",
+    width: 830,
+    height: 554,
+  },
+  {
+    id: "batch-2",
+    label: "ISE",
+    image: "/previews/ISE.JPG",
+    width: 828,
+    height: 563,
+  },
+];
 
 const certificates = [
   {
@@ -111,7 +142,6 @@ const techStack = [
   { name: "Linux", slug: "linux" },
   { name: "AWS", slug: "amazonwebservices" },
   { name: "Supabase", slug: "supabase" },
-  { name: "Vercel", slug: "vercel" },
 ];
 
 const projects = [
@@ -153,8 +183,7 @@ const projects = [
   },
   {
     title: "Wood Run",
-    description:
-      "Endless runner mobile game created in 2019 using Unity.",
+    description: "Endless runner mobile game created in 2019 using Unity.",
     preview: "/previews/wood-run.webp",
     previewWidth: 800,
     previewHeight: 548,
@@ -203,241 +232,318 @@ function App() {
       </div>
 
       <div className="page">
-      <header className="topbar">
-        <a className="topbar__logo" href="#top">
-          {profile.name}
-        </a>
-        <nav className="topbar__nav" aria-label="Primary">
-          <a href="#cases">Work</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </header>
+        <header className="topbar">
+          <a className="topbar__logo" href="#top">
+            {profile.name}
+          </a>
+          <nav className="topbar__nav" aria-label="Primary">
+            <a href="#training">Training</a>
+            <a href="#cases">Work</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </header>
 
-      <main id="top">
-        <section className="hero">
-          <div className="hero__content">
-            <p className="hero__intro">{profile.intro}</p>
+        <main id="top">
+          <section className="hero">
+            <div className="hero__content">
+              <p className="hero__intro">{profile.intro}</p>
 
-            <div className="hero__portrait">
-              <img
-                src={profile.avatarUrl}
-                alt={profile.name}
-                width={600}
-                height={800}
-                decoding="async"
-                fetchPriority="high"
-            />
-          </div>
-          </div>
-
-          <div className="hero__footer">
-            <span className="tag tag--accent">Full-Stack Web Developer</span>
-            <span className="tag">{profile.location}</span>
-            <span className="tag">{profile.education}</span>
-          </div>
-        </section>
-
-        <section className="block skills" id="skills" aria-label="Skills">
-          <span className="skills__label">Skills</span>
-          <ul className="skills-grid">
-            {techStack.map((tech) => (
-              <li key={tech.name} className="skills-grid__item">
+              <div className="hero__portrait">
                 <img
-                  src={`https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${tech.slug}.svg`}
-                  alt=""
-                  className="skills-grid__icon"
-                  width={48}
-                  height={48}
-                  loading="lazy"
+                  src={profile.avatarUrl}
+                  alt={profile.name}
+                  width={600}
+                  height={800}
                   decoding="async"
+                  fetchPriority="high"
                 />
-                <span className="skills-grid__name">{tech.name}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="block" id="cases">
-          <header className="block__head">
-            <h2 className="block__title">Projects</h2>
-            <div className="block__actions">
-              <span className="block__count">
-                [ {pad(projects.length)} · {pad(projectPage + 1)} /{" "}
-                {pad(projectPageCount)} ]
-              </span>
-              <div className="case-nav">
-                <button
-                  type="button"
-                  className="case-nav__btn"
-                  onClick={showPrevProjects}
-                  disabled={projectPage === 0}
-                  aria-label="Previous projects"
-                >
-                  ←
-                </button>
-                <button
-                  type="button"
-                  className="case-nav__btn"
-                  onClick={showNextProjects}
-                  disabled={projectPage >= projectPageCount - 1}
-                  aria-label="Next projects"
-                >
-                  →
-                </button>
               </div>
             </div>
-          </header>
 
-          <ul className="cases">
-            {visibleProjects.map((project, i) => {
-              const projectIndex = projectPage * PROJECTS_PER_PAGE + i;
-              const CaseTag = project.liveUrl ? "a" : "div";
-              const linkProps = project.liveUrl
-                ? {
-                    href: project.liveUrl,
-                    target: "_blank",
-                    rel: "noreferrer",
-                    "aria-label": `${project.title}, open live site`,
-                  }
-                : {};
-              return (
-              <li key={project.title} className="case">
-                <CaseTag className="case__main" {...linkProps}>
-                  <span className="case__index">{pad(projectIndex + 1)}</span>
-                  <span className="case__title">{project.title}</span>
-                  <span className="case__thumb">
+            <div className="hero__footer">
+              <span className="tag tag--accent">Full-Stack Web Developer</span>
+              <span className="tag">{profile.location}</span>
+              <span className="tag">{profile.education}</span>
+            </div>
+          </section>
+
+          <section className="block" id="training">
+            <div className="training__intro">
+              <p className="training__desc">
+                Conducting Full-Stack Web Development training for over 120+
+                students. Mentoring aspiring developers through live coding,
+                real-world project architecture.
+              </p>
+            </div>
+
+            <div className="training__gallery">
+              {trainingBatches.map((batch) => (
+                <div key={batch.id} className="training__card">
+                  <div className="training__image-wrap">
                     <img
-                      src={project.preview}
-                      alt=""
-                      width={project.previewWidth}
-                      height={project.previewHeight}
+                      src={batch.image}
+                      alt={`Full-Stack Web Development ${batch.label}`}
+                      width={batch.width}
+                      height={batch.height}
                       loading="lazy"
                       decoding="async"
+                      className="training__image"
                     />
-                  </span>
-                </CaseTag>
-                <div className="case__meta">
-                  <p className="case__desc">{project.description}</p>
-                  <div className="case__links">
-                    {!project.hideActions ? (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-link"
-                      >
-                        Live ↗
-                      </a>
-                    ) : null}
-                    {project.codeUrl ? (
-                      <a
-                        href={project.codeUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-link"
-                      >
-                        Code ↗
-                      </a>
-                    ) : null}
+                    <span className="training__badge">{batch.label}</span>
                   </div>
                 </div>
-              </li>
-              );
-            })}
-          </ul>
-        </section>
+              ))}
+            </div>
+          </section>
 
-        <section className="block" id="courses">
-          <header className="block__head">
-            <h2 className="block__title">Course</h2>
-            <span className="block__count">[ {pad(courses.length)} ]</span>
-          </header>
+          <section className="block skills" id="skills" aria-label="Skills">
+            <span className="skills__label">Skills</span>
+            <ul className="skills-grid">
+              {techStack.map((tech) => (
+                <li key={tech.name} className="skills-grid__item">
+                  <img
+                    src={`https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${tech.slug}.svg`}
+                    alt=""
+                    className="skills-grid__icon"
+                    width={48}
+                    height={48}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span className="skills-grid__name">{tech.name}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
 
-          <ul className="courses">
-            {courses.map((course, i) => (
-              <li key={course.title} className="course">
-                <a
-                  className="course__main"
-                  href={course.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`${course.title}, open on ${course.platform}`}
-                >
-                  <span className="course__index">{pad(i + 1)}</span>
-                  <div className="course__body">
-                    <span className="course__platform">{course.platform}</span>
-                    <span className="course__title">{course.title}</span>
-                    <div className="course__stats">
-                      <span className="course__stat course__stat--rating">
-                        <span className="course__stat-value">{course.rating} ★</span>
-                        <span className="course__stat-label">Rating</span>
+          <section className="block" id="cases">
+            <header className="block__head">
+              <h2 className="block__title">Projects</h2>
+              <div className="block__actions">
+                <span className="block__count">
+                  [ {pad(projects.length)} · {pad(projectPage + 1)} /{" "}
+                  {pad(projectPageCount)} ]
+                </span>
+                <div className="case-nav">
+                  <button
+                    type="button"
+                    className="case-nav__btn"
+                    onClick={showPrevProjects}
+                    disabled={projectPage === 0}
+                    aria-label="Previous projects"
+                  >
+                    ←
+                  </button>
+                  <button
+                    type="button"
+                    className="case-nav__btn"
+                    onClick={showNextProjects}
+                    disabled={projectPage >= projectPageCount - 1}
+                    aria-label="Next projects"
+                  >
+                    →
+                  </button>
+                </div>
+              </div>
+            </header>
+
+            <ul className="cases">
+              {visibleProjects.map((project, i) => {
+                const projectIndex = projectPage * PROJECTS_PER_PAGE + i;
+                const CaseTag = project.liveUrl ? "a" : "div";
+                const linkProps = project.liveUrl
+                  ? {
+                      href: project.liveUrl,
+                      target: "_blank",
+                      rel: "noreferrer",
+                      "aria-label": `${project.title}, open live site`,
+                    }
+                  : {};
+                return (
+                  <li key={project.title} className="case">
+                    <CaseTag className="case__main" {...linkProps}>
+                      <span className="case__index">
+                        {pad(projectIndex + 1)}
                       </span>
-                      <span className="course__stat course__stat--students">
-                        <span className="course__stat-value">
-                          {formatCount(course.students)}
-                        </span>
-                        <span className="course__stat-label">Students</span>
+                      <span className="case__title">{project.title}</span>
+                      <span className="case__thumb">
+                        <img
+                          src={project.preview}
+                          alt=""
+                          width={project.previewWidth}
+                          height={project.previewHeight}
+                          loading="lazy"
+                          decoding="async"
+                        />
                       </span>
-                      <span className="course__stat course__stat--reviews">
-                        <span className="course__stat-value">
-                          {formatCount(course.ratingCount)}
-                        </span>
-                        <span className="course__stat-label">Reviews</span>
-                      </span>
+                    </CaseTag>
+                    <div className="case__meta">
+                      <p className="case__desc">{project.description}</p>
+                      <div className="case__links">
+                        {!project.hideActions ? (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-link"
+                          >
+                            Live ↗
+                          </a>
+                        ) : null}
+                        {project.codeUrl ? (
+                          <a
+                            href={project.codeUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-link"
+                          >
+                            Code ↗
+                          </a>
+                        ) : null}
+                      </div>
                     </div>
-                  </div>
-                  <span className="course__thumb">
-                    <img
-                      src={course.preview}
-                      alt={course.previewAlt}
-                      width={course.previewWidth}
-                      height={course.previewHeight}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </span>
-                </a>
-                <div className="course__meta">
-                  <p className="course__desc">{course.description}</p>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+
+          <section className="block" id="courses">
+            <header className="block__head">
+              <h2 className="block__title">Course</h2>
+              <span className="block__count">[ {pad(courses.length)} ]</span>
+            </header>
+
+            <ul className="courses">
+              {courses.map((course, i) => (
+                <li key={course.title} className="course">
                   <a
+                    className="course__main"
                     href={course.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-link"
+                    aria-label={`${course.title}, open on ${course.platform}`}
                   >
-                    View course ↗
+                    <span className="course__index">{pad(i + 1)}</span>
+                    <div className="course__body">
+                      <span className="course__platform">
+                        {course.platform}
+                      </span>
+                      <span className="course__title">{course.title}</span>
+                      <div className="course__stats">
+                        <span className="course__stat course__stat--rating">
+                          <span className="course__stat-value">
+                            {course.rating} ★
+                          </span>
+                          <span className="course__stat-label">Rating</span>
+                        </span>
+                        <span className="course__stat course__stat--students">
+                          <span className="course__stat-value">
+                            {formatCount(course.students)}
+                          </span>
+                          <span className="course__stat-label">Students</span>
+                        </span>
+                        <span className="course__stat course__stat--reviews">
+                          <span className="course__stat-value">
+                            {formatCount(course.ratingCount)}
+                          </span>
+                          <span className="course__stat-label">Reviews</span>
+                        </span>
+                      </div>
+                    </div>
+                    <span className="course__thumb">
+                      <img
+                        src={course.preview}
+                        alt={course.previewAlt}
+                        width={course.previewWidth}
+                        height={course.previewHeight}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </span>
                   </a>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </section>
+                  <div className="course__meta">
+                    <p className="course__desc">{course.description}</p>
+                    <a
+                      href={course.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-link"
+                    >
+                      View course ↗
+                    </a>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
 
-        <section className="block" id="experience">
-          <header className="block__head">
-            <h2 className="block__title">
-              Where I&apos;ve <em>Worked</em>
-            </h2>
-            <span className="block__count">[ {pad(experience.length)} ]</span>
-          </header>
+          <section className="block" id="reviews">
+            <header className="block__head">
+              <h2 className="block__title">Reviews</h2>
+              <span className="block__count">[ {pad(reviews.length)} ]</span>
+            </header>
 
-          <ol className="ladder">
-            {experience.map((job, i) => (
-              <li key={`${job.org}-${job.period}`} className="rung">
-                <span className="rung__index">{pad(i + 1)}</span>
-                <span className="rung__role">{job.role}</span>
-                <span className="rung__org">{job.org}</span>
-                <span className="rung__period">{job.period}</span>
-              </li>
-            ))}
-          </ol>
-        </section>
+            <div className="reviews">
+              {reviews.map((review) => (
+                <a
+                  key={review.name}
+                  className="review"
+                  href={review.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`View ${review.name}'s review on Udemy`}
+                >
+                  <div className="review__head">
+                    <span className="review__avatar" aria-hidden="true">
+                      {review.name.charAt(0)}
+                    </span>
+                    <div>
+                      <h3 className="review__name">{review.name}</h3>
+                      <div className="review__meta">
+                        <span
+                          className="review__stars"
+                          aria-label={`${review.rating} out of 5 stars`}
+                        >
+                          {"★".repeat(review.rating)}
+                        </span>
+                        <span>{review.date}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="review__text">{review.text}</p>
+                  <span className="review__link">View on course ↗</span>
+                </a>
+              ))}
+            </div>
+          </section>
 
-        <section className="block split" id="more">
-          <div className="split__col">
+          <section className="block" id="experience">
+            <header className="block__head">
+              <h2 className="block__title">
+                Where I&apos;ve <em>Worked</em>
+              </h2>
+              <span className="block__count">[ {pad(experience.length)} ]</span>
+            </header>
+
+            <ol className="ladder">
+              {experience.map((job, i) => (
+                <li key={`${job.org}-${job.period}`} className="rung">
+                  <span className="rung__index">{pad(i + 1)}</span>
+                  <span className="rung__role">{job.role}</span>
+                  <span className="rung__org">{job.org}</span>
+                  <span className="rung__period">{job.period}</span>
+                </li>
+              ))}
+            </ol>
+          </section>
+
+          <section className="block" id="more">
             <header className="block__head">
               <h2 className="block__title block__title--sm">Certificates</h2>
-              <span className="block__count">[ {pad(certificates.length)} ]</span>
+              <span className="block__count">
+                [ {pad(certificates.length)} ]
+              </span>
             </header>
             <div className="certs">
               {certificates.map((c) => (
@@ -463,64 +569,35 @@ function App() {
                 </article>
               ))}
             </div>
-          </div>
+          </section>
 
-          <div className="split__col">
-            <header className="block__head">
-              <h2 className="block__title block__title--sm">Products</h2>
-              <span className="block__count">[ {pad(products.length)} ]</span>
-            </header>
-            <div className="products">
-              {products.map((item) => (
-                <article key={item.label} className="product">
-                  <a
-                    href={item.href}
-                    className="product__name"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {item.label} ↗
-                  </a>
-                  {item.description ? (
-                    <p className="product__desc">{item.description}</p>
-                  ) : null}
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <footer className="contact" id="contact">
-          <a className="contact__email" href={`mailto:${profile.email}`}>
-            {profile.email}
-          </a>
-
-          <div className="contact__grid">
-            <div className="contact__col">
-              <span className="contact__label">Get in touch</span>
-              <div className="contact__links">
-                {connectLinks.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {item.label} ↗
-                  </a>
-                ))}
+          <footer className="contact" id="contact">
+            <div className="contact__grid">
+              <div className="contact__col">
+                <span className="contact__label">Get in touch</span>
+                <div className="contact__links">
+                  {connectLinks.map((item) => (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {item.label} ↗
+                    </a>
+                  ))}
+                </div>
+              </div>
+              <div className="contact__col contact__col--end">
+                <span className="contact__label">Based in</span>
+                <p className="contact__place">{profile.location}</p>
+                <p className="contact__copy">
+                  © {new Date().getFullYear()} {profile.name}
+                </p>
               </div>
             </div>
-            <div className="contact__col contact__col--end">
-              <span className="contact__label">Based in</span>
-              <p className="contact__place">{profile.location}</p>
-              <p className="contact__copy">
-                © {new Date().getFullYear()} {profile.name}
-              </p>
-            </div>
-          </div>
-        </footer>
-      </main>
+          </footer>
+        </main>
       </div>
     </div>
   );

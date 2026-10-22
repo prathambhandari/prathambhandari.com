@@ -184,9 +184,7 @@ main {
 .cases,
 .courses,
 .ladder,
-.split,
-.certs,
-.products {
+.certs {
   width: 100%;
 }
 
@@ -368,10 +366,6 @@ main {
   padding: clamp(18px, 3vw, 32px) 0;
 }
 
-.case:last-child {
-  border-bottom: 1px solid var(--line);
-}
-
 .case__main {
   position: relative;
   display: flex;
@@ -479,10 +473,6 @@ main {
 .course {
   border-top: 1px solid var(--line);
   padding: clamp(18px, 3vw, 32px) 0;
-}
-
-.course:last-child {
-  border-bottom: 1px solid var(--line);
 }
 
 .course__main {
@@ -640,6 +630,95 @@ main {
   color: var(--muted);
 }
 
+/* —— Reviews —— */
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 250px;
+  padding: clamp(20px, 3vw, 32px);
+  color: inherit;
+  text-decoration: none;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  transition: background-color 0.2s ease;
+}
+
+.review:hover,
+.review:focus-visible {
+  background: var(--frost);
+}
+
+.review__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.review__avatar {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--fg-bright);
+  font-family: var(--mono);
+  font-size: 14px;
+}
+
+.review__name {
+  margin: 0 0 5px;
+  color: var(--fg-bright);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.review__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11px;
+}
+
+.review__stars {
+  color: #f5b942;
+  letter-spacing: 0.08em;
+}
+
+.review__text {
+  margin: 24px 0;
+  color: var(--fg);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.review__link {
+  margin-top: auto;
+  color: var(--fg-bright);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.review:hover .review__link,
+.review:focus-visible .review__link {
+  color: var(--accent);
+}
+
 /* —— Experience ladder —— */
 .ladder {
   list-style: none;
@@ -649,7 +728,7 @@ main {
 
 .rung {
   display: grid;
-  grid-template-columns: 56px minmax(180px, 1.2fr) minmax(0, 2fr) auto;
+  grid-template-columns: 56px minmax(180px, 1.2fr) minmax(0, 2fr) minmax(160px, auto);
   gap: 16px clamp(24px, 4vw, 64px);
   align-items: baseline;
   padding: clamp(16px, 2.4vw, 28px) 0;
@@ -657,9 +736,21 @@ main {
   width: 100%;
 }
 
-.rung:last-child {
-  border-bottom: 1px solid var(--line);
+@supports (grid-template-columns: subgrid) {
+  .ladder {
+    display: grid;
+    grid-template-columns: 56px minmax(180px, 1.2fr) minmax(0, 2fr) auto;
+    column-gap: clamp(24px, 4vw, 64px);
+  }
+
+  .rung {
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+    gap: 0;
+  }
 }
+
+
 
 .rung__index {
   font-family: var(--mono);
@@ -691,14 +782,81 @@ main {
   white-space: nowrap;
 }
 
-/* —— Split (certificates + products) —— */
-.split {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: clamp(40px, 6vw, 96px);
+/* —— Training section —— */
+.training__intro {
   width: 100%;
+  max-width: none;
+  margin-bottom: clamp(28px, 4.5vh, 44px);
 }
 
+.training__desc {
+  margin: 0;
+  width: 100%;
+  max-width: none;
+  font-family: var(--sans);
+  font-size: clamp(17px, 2vw, 24px);
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  color: var(--fg-bright);
+}
+
+.training__gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 36px);
+}
+
+.training__card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  background: var(--bg-deep);
+  overflow: hidden;
+  transition: border-color 0.25s ease;
+}
+
+.training__card:hover {
+  border-color: var(--line-strong);
+}
+
+.training__image-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: #000;
+}
+
+.training__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) brightness(0.8);
+  transition: filter 0.4s ease, transform 0.4s ease;
+  display: block;
+}
+
+.training__card:hover .training__image {
+  filter: grayscale(0) brightness(1);
+  transform: scale(1.02);
+}
+
+.training__badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line);
+  color: var(--fg-bright);
+  z-index: 2;
+}
+
+/* —— Certificates —— */
 .certs {
   display: flex;
   flex-direction: column;
@@ -744,31 +902,6 @@ main {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--accent-muted);
-}
-
-.products {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-}
-
-.product__name {
-  font-family: var(--sans);
-  font-weight: 500;
-  font-size: 1.05rem;
-  color: var(--fg-bright);
-  transition: color 0.2s ease;
-}
-
-.product__name:hover {
-  color: var(--accent);
-}
-
-.product__desc {
-  margin: 8px 0 0;
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--muted);
 }
 
 /* —— Skills grid —— */
@@ -871,31 +1004,11 @@ main {
   width: 100%;
 }
 
-.contact__email {
-  display: inline-block;
-  margin-top: 0;
-  font-family: var(--mono);
-  font-size: clamp(15px, 2.4vw, 22px);
-  letter-spacing: 0.02em;
-  color: var(--fg-bright);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease, color 0.2s ease;
-  word-break: break-word;
-}
-
-.contact__email:hover {
-  color: var(--accent);
-  border-color: var(--line-strong);
-}
-
 .contact__grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 32px 64px;
-  margin-top: clamp(28px, 6vh, 56px);
-  border-top: 1px solid var(--line);
-  padding-top: 28px;
   width: 100%;
 }
 
@@ -948,11 +1061,12 @@ main {
 
 /* —— Responsive —— */
 @media (max-width: 900px) {
-  .split {
-    grid-template-columns: 1fr;
+  .ladder {
+    display: block;
   }
 
   .rung {
+    grid-column: auto;
     grid-template-columns: 40px 1fr;
     grid-template-areas:
       "idx role"
@@ -1021,6 +1135,18 @@ main {
   .case__meta,
   .course__meta {
     padding-left: 0;
+  }
+
+  .reviews {
+    grid-template-columns: 1fr;
+  }
+
+  .review {
+    min-height: 0;
+  }
+
+  .training__gallery {
+    grid-template-columns: 1fr;
   }
 }
 
