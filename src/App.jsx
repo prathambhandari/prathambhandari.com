@@ -125,7 +125,7 @@ const products = [
       "A modern creator tool for video clipping, smart hook detection, and subtitle generation. Engineered with Next.js on the frontend, Python FastAPI backend, AWS cloud infrastructure, and AI pipelines.",
     preview: "/previews/arkclip.webp",
     previewWidth: 1024,
-    previewHeight: 501,
+    previewHeight: 504,
     liveUrl: "https://arkclip.com/",
     tags: ["Next.js", "Python FastAPI", "AWS", "AI Video"],
   },
