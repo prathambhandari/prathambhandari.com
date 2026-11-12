@@ -6,7 +6,7 @@ const profile = {
   location: "Mangalore, India",
   education: "BCA · Manipal University Jaipur · 2025–present",
   intro:
-    "I'm Pratham Bhandari, a full-stack engineer and educator based in Mangalore, India. I build web apps and products with React, Node, Next.js, and Svelte, including GenAI platforms like Arkclip. I've taught Git & GitHub to 7,000+ students on Udemy and currently train 120+ engineers in full-stack development.",
+    "I'm Pratham Bhandari, a full-stack engineer and educator based in Mangalore, India. I build web apps and products with React, Node, Next.js, including GenAI platforms. I've taught Git & GitHub to 7,000+ students on Udemy and currently train 120+ engineers in full-stack development.",
 };
 
 const experience = [
@@ -313,7 +313,9 @@ function App() {
             </div>
 
             <div className="hero__footer">
-              <span className="tag tag--accent">Available for Hire &amp; Consulting</span>
+              <span className="tag tag--accent">
+                Available for Hire &amp; Consulting
+              </span>
               <span className="tag">Full-Stack Web Developer</span>
               <span className="tag">{profile.location}</span>
               <span className="tag">{profile.education}</span>
@@ -616,7 +618,6 @@ function App() {
               ))}
             </ul>
           </section>
-
 
           <section className="block" id="reviews">
             <header className="block__head">
