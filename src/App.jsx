@@ -6,7 +6,7 @@ const profile = {
   location: "Mangalore, India",
   education: "BCA · Manipal University Jaipur · 2025–present",
   intro:
-    "I'm Pratham Bhandari, a full-stack web developer based in Mangalore, India. I build websites and web apps with React, Node, and MongoDB, and I've also built GenAI Apps. I've taught Git & GitHub to 7,000+ students on Udemy.",
+    "I'm Pratham Bhandari, a full-stack engineer and educator based in Mangalore, India. I build web apps and products with React, Node, Next.js, and Svelte, including GenAI platforms like Arkclip. I've taught Git & GitHub to 7,000+ students on Udemy and currently train 120+ engineers in full-stack development.",
 };
 
 const experience = [
@@ -83,18 +83,43 @@ const reviews = [
 
 const formatCount = (n) => n.toLocaleString("en-US");
 
+const products = [
+  {
+    title: "My Simple Resume",
+    tagline: "Build clean, professional developer resumes in seconds",
+    description:
+      "A fast and intuitive resume builder crafted for engineers and creatives. Built with Svelte, focusing on instant real-time live preview, streamlined form workflows, and pixel-perfect export.",
+    preview: "/previews/my-simple-resume.webp",
+    previewWidth: 1024,
+    previewHeight: 500,
+    liveUrl: "https://www.mysimpleresume.com/",
+    tags: ["Svelte", "Tailwind CSS", "PDF Export"],
+  },
+  {
+    title: "Arkclip",
+    tagline: "AI-powered video clipping and automated transcription platform",
+    description:
+      "A modern creator tool for video clipping, smart hook detection, and subtitle generation. Engineered with Next.js on the frontend, Python FastAPI backend, AWS cloud infrastructure, and AI pipelines.",
+    preview: "/previews/arkclip.webp",
+    previewWidth: 1024,
+    previewHeight: 501,
+    liveUrl: "https://arkclip.com/",
+    tags: ["Next.js", "Python FastAPI", "AWS", "AI Video"],
+  },
+];
+
 const trainingBatches = [
   {
     id: "batch-1",
     label: "CSE",
-    image: "/previews/CSE.png",
+    image: "/previews/CSE.webp",
     width: 830,
     height: 554,
   },
   {
     id: "batch-2",
     label: "ISE",
-    image: "/previews/ISE.JPG",
+    image: "/previews/ISE.webp",
     width: 828,
     height: 563,
   },
@@ -238,6 +263,7 @@ function App() {
           </a>
           <nav className="topbar__nav" aria-label="Primary">
             <a href="#training">Training</a>
+            <a href="#products">Products</a>
             <a href="#cases">Work</a>
             <a href="#contact">Contact</a>
           </nav>
@@ -316,6 +342,92 @@ function App() {
             </ul>
           </section>
 
+          <section className="block" id="products">
+            <header className="block__head">
+              <h2 className="block__title">Products</h2>
+              <span className="block__count">[ {pad(products.length)} ]</span>
+            </header>
+
+            <div className="product-showcase">
+              {products.map((item, i) => (
+                <article key={item.title} className="product-card">
+                  <div className="product-card__media">
+                    {item.liveUrl ? (
+                      <a
+                        href={item.liveUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${item.title}, open live app`}
+                        className="product-card__img-link"
+                      >
+                        <img
+                          src={item.preview}
+                          alt={item.title}
+                          width={item.previewWidth}
+                          height={item.previewHeight}
+                          loading="lazy"
+                          decoding="async"
+                          className="product-card__img"
+                        />
+                      </a>
+                    ) : (
+                      <div className="product-card__img-link">
+                        <img
+                          src={item.preview}
+                          alt={item.title}
+                          width={item.previewWidth}
+                          height={item.previewHeight}
+                          loading="lazy"
+                          decoding="async"
+                          className="product-card__img"
+                        />
+                      </div>
+                    )}
+                  </div>
+                  <div className="product-card__content">
+                    <div className="product-card__header">
+                      <span className="product-card__index">{pad(i + 1)}</span>
+                      <h3 className="product-card__title">
+                        {item.liveUrl ? (
+                          <a
+                            href={item.liveUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="product-card__title-link"
+                          >
+                            {item.title} ↗
+                          </a>
+                        ) : (
+                          item.title
+                        )}
+                      </h3>
+                    </div>
+                    <p className="product-card__tagline">{item.tagline}</p>
+                    <p className="product-card__desc">{item.description}</p>
+                    <div className="product-card__footer">
+                      <div className="product-card__tags">
+                        {item.tags.map((tag) => (
+                          <span key={tag} className="product-card__tag">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      {item.liveUrl ? (
+                        <a
+                          href={item.liveUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-link"
+                        >
+                          Visit site ↗
+                        </a>
+                      ) : null}
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
           <section className="block" id="cases">
             <header className="block__head">
               <h2 className="block__title">Projects</h2>
@@ -477,6 +589,7 @@ function App() {
               ))}
             </ul>
           </section>
+
 
           <section className="block" id="reviews">
             <header className="block__head">
