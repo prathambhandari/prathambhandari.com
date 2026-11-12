@@ -1287,3 +1287,44 @@ main {
     text-align: left;
   }
 }
+
+/* —— SEO helpers —— */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* —— FAQ —— */
+.faq {
+  margin: 0;
+  padding: 0;
+}
+
+.faq__item {
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+
+.faq__q {
+  margin: 0 0 8px;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  color: var(--fg-bright);
+}
+
+.faq__a {
+  margin: 0;
+  max-width: 70ch;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--muted);
+}

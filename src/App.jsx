@@ -83,6 +83,29 @@ const reviews = [
 
 const formatCount = (n) => n.toLocaleString("en-US");
 
+const faqs = [
+  {
+    q: "Who is Pratham Bhandari?",
+    a: "Pratham Bhandari is a full-stack web developer and educator based in Mangalore, Karnataka, India. He builds web apps and products with React, Next.js, Node.js, Svelte and Python FastAPI, and is the creator of Arkclip and My Simple Resume.",
+  },
+  {
+    q: "What technologies does Pratham Bhandari work with?",
+    a: "JavaScript, TypeScript, React, Next.js, Svelte, Node.js, Express, Python FastAPI, Tailwind CSS, MongoDB, Supabase, Qdrant, Docker, Linux and AWS.",
+  },
+  {
+    q: "What products has Pratham Bhandari built?",
+    a: "Arkclip (arkclip.com), an AI video clipping and transcription platform built with Next.js, Python FastAPI and AWS, and My Simple Resume (mysimpleresume.com), a fast resume builder built with Svelte.",
+  },
+  {
+    q: "Does Pratham Bhandari teach full-stack web development?",
+    a: "Yes. He has taught Git & GitHub to 7,000+ students on Udemy and currently trains 120+ students in full-stack web development as a trainer at WinShriTech.",
+  },
+  {
+    q: "Is Pratham Bhandari available for freelance web development?",
+    a: "He has worked as a freelance full-stack web developer since 2019 and can be contacted through LinkedIn or GitHub.",
+  },
+];
+
 const products = [
   {
     title: "My Simple Resume",
@@ -271,13 +294,16 @@ function App() {
 
         <main id="top">
           <section className="hero">
+            <h1 className="sr-only">
+              Pratham Bhandari – Full-Stack Web Developer in Mangalore, India
+            </h1>
             <div className="hero__content">
               <p className="hero__intro">{profile.intro}</p>
 
               <div className="hero__portrait">
                 <img
                   src={profile.avatarUrl}
-                  alt={profile.name}
+                  alt="Pratham Bhandari, full-stack web developer based in Mangalore, India"
                   width={600}
                   height={800}
                   decoding="async"
@@ -287,7 +313,8 @@ function App() {
             </div>
 
             <div className="hero__footer">
-              <span className="tag tag--accent">Full-Stack Web Developer</span>
+              <span className="tag tag--accent">Available for Hire &amp; Consulting</span>
+              <span className="tag">Full-Stack Web Developer</span>
               <span className="tag">{profile.location}</span>
               <span className="tag">{profile.education}</span>
             </div>
@@ -308,7 +335,7 @@ function App() {
                   <div className="training__image-wrap">
                     <img
                       src={batch.image}
-                      alt={`Full-Stack Web Development ${batch.label}`}
+                      alt="Pratham Bhandari teaching a full-stack web development training class to engineering students"
                       width={batch.width}
                       height={batch.height}
                       loading="lazy"
@@ -362,7 +389,7 @@ function App() {
                       >
                         <img
                           src={item.preview}
-                          alt={item.title}
+                          alt={`${item.title} – ${item.tagline}. Built by Pratham Bhandari`}
                           width={item.previewWidth}
                           height={item.previewHeight}
                           loading="lazy"
@@ -682,6 +709,21 @@ function App() {
                 </article>
               ))}
             </div>
+          </section>
+
+          <section className="block" id="faq">
+            <header className="block__head">
+              <h2 className="block__title">FAQ</h2>
+              <span className="block__count">[ {pad(faqs.length)} ]</span>
+            </header>
+            <dl className="faq">
+              {faqs.map((item) => (
+                <div key={item.q} className="faq__item">
+                  <dt className="faq__q">{item.q}</dt>
+                  <dd className="faq__a">{item.a}</dd>
+                </div>
+              ))}
+            </dl>
           </section>
 
           <footer className="contact" id="contact">

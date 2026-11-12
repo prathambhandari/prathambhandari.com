@@ -1,0 +1,17 @@
+# Pratham Bhandari
+
+> Pratham Bhandari is a full-stack web developer and educator based in Mangalore, Karnataka, India. He builds web apps and GenAI products with React, Next.js, Node.js, Svelte and Python FastAPI, has taught Git & GitHub to 7,000+ students on Udemy, and trains 120+ students in full-stack web development.
+
+## Main
+- [Portfolio](https://prathambhandari.com/): Products, projects, course, experience and certificates.
+
+## Products
+- [Arkclip](https://arkclip.com/): AI video clipping and transcription platform (Next.js, Python FastAPI, AWS).
+- [My Simple Resume](https://www.mysimpleresume.com/): Fast resume builder (Svelte).
+
+## Teaching
+- [Git and GitHub: Collaboration and Version Control Unveiled](https://www.udemy.com/course/git-and-github-collaboration-and-version-control-unveiled/): Udemy course.
+
+## Profiles
+- [GitHub](https://github.com/prathambhandari)
+- [LinkedIn](https://www.linkedin.com/in/prathambhandari)
