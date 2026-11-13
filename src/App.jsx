@@ -6,14 +6,14 @@ const profile = {
   location: "Mangalore, India",
   education: "BCA · Manipal University Jaipur · 2025–present",
   intro:
-    "I'm Pratham Bhandari, a full-stack engineer and educator based in Mangalore, India. I build web apps and products with React, Node, Next.js, including GenAI platforms. I've taught Git & GitHub to 7,000+ students on Udemy and currently train 120+ engineers in full-stack development.",
+    "I'm Pratham Bhandari, a full-stack engineer and educator based in Mangalore, India. I build web apps and products with React, Node, Next.js, including GenAI platforms. I've taught Git & GitHub to 7,000+ students on Udemy and trained 120+ engineers in full-stack development.",
 };
 
 const experience = [
   {
     role: "Fullstack WebDev Trainer",
     org: "WinShriTech",
-    period: "Aug 2026 to Present",
+    period: "Aug 2026 to Oct 2026",
   },
   {
     role: "Freelance Web Developer",
@@ -98,7 +98,7 @@ const faqs = [
   },
   {
     q: "Does Pratham Bhandari teach full-stack web development?",
-    a: "Yes. He has taught Git & GitHub to 7,000+ students on Udemy and currently trains 120+ students in full-stack web development as a trainer at WinShriTech.",
+    a: "Yes. He has taught Git & GitHub to 7,000+ students on Udemy and trained 120+ students in full-stack web development at WinShriTech.",
   },
   {
     q: "Is Pratham Bhandari available for freelance web development?",
@@ -325,8 +325,8 @@ function App() {
           <section className="block" id="training">
             <div className="training__intro">
               <p className="training__desc">
-                Conducting Full-Stack Web Development training for over 120+
-                students. Mentoring aspiring developers through live coding,
+                Conducted Full-Stack Web Development training for over 120+
+                students. Mentored aspiring developers through live coding and
                 real-world project architecture.
               </p>
             </div>
